@@ -52,4 +52,4 @@ Open the file, and modify the following lines for your convenience:
 - line 59: modify the path where all configurations for a specific model are reported, along with their own metric results (Elliot generates this file when the whole experimental flow is over, you may find it at ```./results/<dataset>/performance/```
 - lines 63-65: decide what to comment/uncomment based on the multi-objective trade-off you are considering
 
-Once the script has been run and it is over, you will end up with a csv file indicating, for each point in the objective space, its coordinates and whether it belongs to the Pareto frontier or not.
+Once the script has been run and it is over, you will end up with a csv file indicating, for each nondominated point in the objective space, its coordinates.
