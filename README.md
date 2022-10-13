@@ -12,7 +12,7 @@ If you have the possibility to install CUDA on your workstation (i.e., `10.2`), 
 ```
 # PYTORCH ENVIRONMENT (CUDA 10.2, cuDNN 8.0)
 
-$ python3 -m venv venv_pt
+$ python3 -m venv venv
 $ source venv_pt/bin/activate
 $ pip install --upgrade pip
 $ pip install -r requirements_pt.txt
