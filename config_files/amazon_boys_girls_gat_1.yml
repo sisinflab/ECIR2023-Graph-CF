@@ -1,0 +1,41 @@
+experiment:
+  backend: pytorch
+  data_config:
+    strategy: fixed
+    train_path: ../data/{0}/train.tsv
+    validation_path: ../data/{0}/val.tsv
+    test_path: ../data/{0}/test.tsv
+  dataset: amazon_boys_girls
+  top_k: 50
+  evaluation:
+    cutoffs: [10, 20, 50]
+    simple_metrics: [Recall, nDCG, nDCGRendle2020, HR, LAUC, F1, MAP, MAR, MRR, ACLT, APLT, ARP, PopREO, PopRSP, ItemCoverage, Gini, SEntropy, EFD, EPC]
+    complex_metrics:
+    - metric: UserMADranking
+      clustering_name: WarmColdUsers
+      clustering_file: ../data/amazon_boys_girls/quantiles.tsv
+    - metric: UserMADrating
+      clustering_name: WarmColdUsers
+      clustering_file: ../data/amazon_boys_girls/quantiles.tsv
+  binarize: True
+  gpu: 0
+  external_models_path: ../external/models/__init__.py
+  models:
+    external.GAT:
+      meta:
+        hyper_opt_alg: grid
+        verbose: True
+        save_weights: False
+        save_recs: True
+        validation_rate: 20
+        validation_metric: Recall@20
+        restore: False
+      lr: [0.0001, 0.0005, 0.001, 0.005]
+      epochs: 400
+      factors: [64, 128, 256]
+      batch_size: 256
+      l_w: 1e-4
+      weight_size: (64,)
+      message_dropout: 0.2
+      heads: (1,)
+      seed: 123
