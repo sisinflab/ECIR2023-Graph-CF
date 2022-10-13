@@ -13,9 +13,9 @@ If you have the possibility to install CUDA on your workstation (i.e., `10.2`), 
 # PYTORCH ENVIRONMENT (CUDA 10.2, cuDNN 8.0)
 
 $ python3 -m venv venv
-$ source venv_pt/bin/activate
+$ source venv/bin/activate
 $ pip install --upgrade pip
-$ pip install -r requirements_pt.txt
+$ pip install -r requirements.txt
 $ pip install torch-scatter torch-sparse torch-cluster torch-spline-conv torch-geometric -f https://data.pyg.org/whl/torch-1.10.0+cu102.html
 ```
 
