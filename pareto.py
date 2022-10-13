@@ -55,11 +55,15 @@ class ObjectivesSpace:
 
 
 if __name__ == '__main__':
-    files = os.listdir('daniele/men')
+    # choose dataset path for the results
+    files = os.listdir('./results/amazon_baby/performance/')
+
     for file in files:
         print(file)
-        path = 'daniele/men/' + file
+        path = './results/amazon_baby/performance/' + file
         model = pd.read_csv(path, sep='\t')
+
+        # choose the trade-off (min/max if the metric is supposed to be minimized or maximized, respectively
         obj = ObjectivesSpace(model, {'nDCG': 'max', 'APLT': 'max'}, path, file.split('.')[0])
         # obj = ObjectivesSpace(model, {'nDCG': 'max', 'UserMADranking_WarmColdUsers': 'min'}, path, file.split('.')[0])
         # obj = ObjectivesSpace(model, {'APLT': 'max', 'UserMADranking_WarmColdUsers': 'min'}, path, file.split('.')[0])
