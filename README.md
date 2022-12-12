@@ -1,6 +1,6 @@
 # Auditing Consumer- and Producer-Fairness in Graph Collaborative Filtering
 
-This is the official GitHub repository for the paper: _Auditing Consumer- and Producer-Fairness in Graph Collaborative Filtering_, under review as long paper at ECIR 2023.
+This is the official GitHub repository for the paper: _Auditing Consumer- and Producer-Fairness in Graph Collaborative Filtering_, accepted as full paper at ECIR 2023.
 
 This repository is heavily dependent on the framework **Elliot**, so we suggest you refer to the official GitHub [page](https://github.com/sisinflab/elliot) and [documentation](https://elliot.readthedocs.io/en/latest/).
 
